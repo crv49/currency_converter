@@ -18,5 +18,5 @@ def setup_logging():
 
         logger.addHandler(fh)
         logger.addHandler(sh)
-
+        
     return logger
