@@ -11,8 +11,8 @@ def test_convert():
     assert convert(0, 1.23) == 0 				            #converting to 0 should result in 0
 
     #edge case: negatives
-    assert convert(-100, 0.5) == -50 				        #negative amounts return negative values
-    assert round(convert(-123.45, 1.23), 4) == -151.8435    #negative decimals should round to 4 decimal places
+    with pytest.raises(ValueError, match="Amount cannot be negative"):
+        convert(-10, 1.2)
      
 def test_get_exchange_rate_api():
     #edge case: API call failures
